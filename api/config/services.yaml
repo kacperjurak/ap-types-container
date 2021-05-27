@@ -25,7 +25,17 @@ services:
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller/'
-        tags: ['controller.service_arguments']
+        tags: [ 'controller.service_arguments' ]
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Type\Definition\ExampleType:
+        tags:
+            - { name: api_platform.graphql.type }
+
+    App\Type\TypeConverter:
+        decorates: api_platform.graphql.type_converter
+        
+    App\Type\TypesContainer:
+        decorates: api_platform.graphql.types_container

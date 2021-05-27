@@ -18,6 +18,8 @@ final class ExampleType extends InputObjectType implements TypeInterface
     {
         $this->typesContainer = $typesContainer;
 
+        dump($this->typesContainer->all()); // doesn't work but i need TypesContainer here to declare fields below
+
         $config = [
             // Note: 'name' is not needed in this form:
             // it will be inferred from class name by omitting namespace and dropping "Type" suffix

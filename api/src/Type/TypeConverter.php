@@ -26,7 +26,7 @@ final class TypeConverter implements TypeConverterInterface
      */
     public function convertType(Type $type, bool $input, ?string $queryName, ?string $mutationName, ?string $subscriptionName, string $resourceClass, string $rootResource, ?string $property, int $depth)
     {
-        dump($this->typesContainer->all()); // shouldn't return ExampleType ?
+        dump($this->typesContainer->all()); // it works
 
         return $this->defaultTypeConverter->convertType($type, $input, $queryName, $mutationName, $subscriptionName, $resourceClass, $rootResource, $property, $depth);
     }
